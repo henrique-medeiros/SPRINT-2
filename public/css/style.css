@@ -62,11 +62,7 @@ li:hover {
 }
 
 .titulo {
-  color: #32b9cd;
-  width: fit-content;
-  font-weight: 500;
-  font-size: 35px;
-  background-color: white;
+align-items: flex-start;
 }
 
 body #espacamento {
