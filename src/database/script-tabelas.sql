@@ -3,9 +3,9 @@
 -- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
 
 /* para workbench - local - desenvolvimento */
-CREATE DATABASE acquatec;
+CREATE DATABASE termovac;
 
-USE acquatec;
+USE termovac;
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -25,9 +25,8 @@ CREATE TABLE aviso (
 CREATE TABLE medida (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	temperatura DECIMAL,
-	umidade DECIMAL,
 	momento DATETIME,
-	fk_aquario INT
+	fk_transporte INT
 );
 
 
