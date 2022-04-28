@@ -502,3 +502,62 @@ button {
 button:hover {
   text-decoration: underline;
 }
+
+/* CADASTRO */
+
+.card_medio {
+  margin-top: 5%;
+}
+
+.container_tamanho-conteudo {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  display: flex;
+  color: #32b9cd;
+}
+
+.card_medio  h2 {
+  color: #32b9cd;
+  margin-top: initial;
+  
+}
+
+.banner .card_medio {
+  background-color: white;
+  height: 450px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-around;
+  margin: auto;
+  margin-top: 5%;
+  padding: 10px 0;
+  border-radius: 20px;
+}
+
+.banner {
+  height: 555px;
+  background-image: url("../../Imagens site/fundo mao.jpg");
+  background-size: cover;
+}
+
+.btn {
+  font-family: monospace;
+  margin-top: 10px;
+  border: 0;
+  font-weight: 600;
+  background-color: #32b9cd;
+  color: white;
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.letrinhas {
+  font-size: 11px;
+  margin-left: 5%;
+  color: black;
+}
