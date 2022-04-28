@@ -24,11 +24,14 @@ body {
   border-bottom: 3px solid #32b9cd;
   background-color: #ffffff;
   width: 100vw;
+  height: 15vh;
   position: fixed;
 }
 
 .header .container {
   justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
 .header a {
@@ -41,7 +44,7 @@ body {
 }
 
 .navbar {
-  width: 50%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -258,8 +261,17 @@ button {
 }
 
 .formulario {
+  background-color: white;
+  height: 450px;
+  width: 400px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content:flex-end;
+  margin: auto;
+  margin-top: 5%;
+  padding: 10px 0;
+  border-radius: 20px;
 }
 
 input {
@@ -505,13 +517,40 @@ button:hover {
 
 /* CADASTRO */
 
+
+
+.headerCad {
+  border-bottom: 3px solid #32b9cd;
+  background-color: #ffffff;
+  width: 100vw;
+  height: 15vh;
+  position: fixed;
+}
+
+.headerCad .containerCad {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.headerCad a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.containerCad {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  color: white;
+}
+
 .card_medio {
   margin-top: 5%;
+
 }
 
 .container_tamanho-conteudo {
-  width: 80%;
-  height: 80%;
   margin: auto;
   display: flex;
   color: #32b9cd;
@@ -519,11 +558,10 @@ button:hover {
 
 .card_medio  h2 {
   color: #32b9cd;
-  margin-top: initial;
   
 }
 
-.banner .card_medio {
+.bannerCad .card_medio {
   background-color: white;
   height: 450px;
   width: 400px;
@@ -531,13 +569,15 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content:space-around;
-  margin: auto;
   margin-top: 5%;
   padding: 10px 0;
+  padding-bottom: 20px;
   border-radius: 20px;
+  margin: auto;
+  margin-top: 10vh;
 }
 
-.banner {
+.bannerCad {
   height: 555px;
   background-image: url("../../Imagens site/fundo mao.jpg");
   background-size: cover;
@@ -560,4 +600,13 @@ button:hover {
   font-size: 11px;
   margin-left: 5%;
   color: black;
+}
+
+#simulador {
+  background-color: #44e6ff;
+  padding: 1.5%;
+  border-radius: 100px;
+  margin-left: 3%;  
+  border: 1px solid black;
+  box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.1);
 }
