@@ -32,18 +32,18 @@
             </div>
 
             <div class="btn-nav">
-                <h3>Aquários</h3>
+                <h3>Transportes</h3>
             </div>
 
             <div class="btn-nav-white">
-                <a href="./dashboard.html">
+                <a href="./index1.html">
                     <h3>Gráficos</h3>
                 </a>
             </div>
 
             <div class="btn-nav-white">
                 <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                    <h3>Suporte</h3>
                 </a>
             </div>
 
@@ -56,54 +56,54 @@
         <div class="dash">
             <div class="regua">
                 <div class="item-regua perigo-frio">
-                    <h4>Perigo</h4>
-                    <h2>0°C</h2>
+                    <h4>Perigo ❄️</h4>
+                    <h2>-80°C</h2>
                 </div>
                 <div class="item-regua alerta-frio">
-                    <h4>Alerta</h4>
-                    <h2>0°C</h2>
+                    <h4>Alerta ❄️</h4>
+                    <h2>-40°C</h2>
                 </div>
                 <div class="item-regua ideal">
                     <h4>Ideal</h4>
                     <h2>0°C</h2>
                 </div>
                 <div class="item-regua alerta-quente">
-                    <h4>Alerta</h4>
-                    <h2>0°C</h2>
+                    <h4>Alerta 🔥</h4>
+                    <h2>6°C</h2>
                 </div>
                 <div class="item-regua perigo-quente">
-                    <h4>Perigo</h4>
-                    <h2>0°C</h2>
+                    <h4>Perigo 🔥</h4>
+                    <h2>10°C</h2>
                 </div>
             </div>
 
             <div class="cards">
                 <div class="card">
-                    <h1>Aquário 1</h1>
+                    <h1>Transporte 1</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_1">-°C</p>
+                        <p id="temp_transporte_1">-°C</p>
                     </div>
                     <div class="cor-alerta" id="card_1"></div>
                 </div>
                 <div class="card">
-                    <h1>Aquário 1</h1>
+                    <h1>Transporte 2</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_2">-°C</p>
+                        <p id="temp_transporte_2">-°C</p>
                     </div>
                     <div class="cor-alerta" id="card_2"></div>
 
                 </div>
                 <div class="card">
-                    <h1>Aquário 1</h1>
+                    <h1>Transporte 3</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_3">-°C</p>
+                        <p id="temp_transporte_3">-°C</p>
                     </div>
                     <div class="cor-alerta ideal" id="card_3"></div>
                 </div>
                 <div class="card">
-                    <h1>Aquário 1</h1>
+                    <h1>Transporte 4</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_4">-°C</p>
+                        <p id="temp_transporte_4">-°C</p>
                     </div>
                     <div class="cor-alerta" id="card_4"></div>
                 </div>
@@ -136,8 +136,8 @@
         setTimeout(atualizacaoPeriodica, 5000);
     }
 
-    function obterdados(idAquario) {
-        fetch(`/medidas/tempo-real/${idAquario}`)
+    function obterdados(idTransporte) {
+        fetch(`/medidas/tempo-real/${idTransporte}`)
             .then(resposta => {
 
                 if (resposta.ok) {
@@ -149,7 +149,7 @@
                             temperatura: resposta[0].temperatura,
                         }
 
-                        alertar(resposta[0].temperatura, idAquario);
+                        alertar(resposta[0].temperatura, idTransporte);
                     });
                 } else {
 
@@ -162,13 +162,13 @@
 
     }
 
-    function alertar(temperatura, idAquario) {
+    function alertar(temperatura, idTransporte) {
         var limites = {
-            muito_quente: 23,
-            quente: 22,
-            ideal: 20,
-            frio: 10,
-            muito_frio: 5
+            muito_quente: 10,
+            quente: 6,
+            ideal: 0,
+            frio: -40,
+            muito_frio: -80
         };
 
         var classe_temperatura = 'cor-alerta';
@@ -196,17 +196,17 @@
 
         var card;
 
-        if (idAquario == 1) {
-            temp_aquario_1.innerHTML = temperatura + "°C";
+        if (idTransporte == 1) {
+            temp_transporte_1.innerHTML = temperatura + "°C";
             card = card_1
-        } else if (idAquario == 2) {
-            temp_aquario_2.innerHTML = temperatura + "°C";
+        } else if (idTransporte == 2) {
+            temp_transporte_2.innerHTML = temperatura + "°C";
             card = card_2
-        } else if (idAquario == 3) {
-            temp_aquario_3.innerHTML = temperatura + "°C";
+        } else if (idTransporte == 3) {
+            temp_transporte_3.innerHTML = temperatura + "°C";
             card = card_3
-        } else if (idAquario == 4) {
-            temp_aquario_4.innerHTML = temperatura + "°C";
+        } else if (idTransporte == 4) {
+            temp_transporte_4.innerHTML = temperatura + "°C";
             card = card_4
         }
 

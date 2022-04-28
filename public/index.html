@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>tVac | Inicio</title>
+    <title>TermoVac | Página inicial</title>
 
     <script src="./js/funcoes.js"></script>
 
@@ -21,9 +21,7 @@
 <body>
     <div class="header">
         <div class="container">
-            <div class="titulo">
-                <img src="..\Imagens site\termo1.png" style="width:100px">
-            </div>
+            <h1 class="titulo"><span style="color: #00ffc8">t</span><span style="color: #44e6ff">Vac</span></h1>
             <ul class="navbar">
                 <li class="agora">
                     Início
@@ -122,7 +120,7 @@
     <!--footer inicio-->
     <div class="footer">
         <div class="container">
-            <h1 class="titul">tVac</h1>
+            <h1 class="titul"><span style="color: #00ffc8">t</span><span style="color: #44e6ff">Vac</span>&copy;</h1>
         </div>
     </div>
     <!--footer fim-->
@@ -134,11 +132,10 @@
     document.querySelector(".cont")
     .addEventListener("wheel", function() {
          if(event.deltaY > 0) {
-            event.target.scrollBy(-1920, 0)
-            
-             
+            event.target.scrollBy(-1280, 0)
+
          } else {
-            event.target.scrollBy(1920, 0)
+            event.target.scrollBy(1280, 0)
          }
     })
     
