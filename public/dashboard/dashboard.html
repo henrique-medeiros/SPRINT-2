@@ -6,20 +6,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Dashboards</title>
+    <title>Termovac | Dashboards</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="dashboards.css">
-    <script src="../js/funcoes.js"></script>
+    <script src="./main.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-    <!-- scripts do Chart.js -->
-    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
-
+    <title>Line Chart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
 </head>
 
 <body onload="validarSessao(), atualizarFeed()">
@@ -27,15 +35,15 @@
 
     <div class="janela">
         <div class="header-left">
-            <h1>AcquaTec</h1>
+            <h1>Termovac</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Transporte</h3>
+            <div class="btn-nav">
+                <a href="cards.html">
+                    <h3>Transportes</h3>
                 </a>
             </div>
 
@@ -57,17 +65,66 @@
 
         </div>
 
+
         <div class="dash">
-            <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <button class="btn-chart" onclick="obterDadosGrafico(1)">Transporte 1</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(2)">Transporte 2</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(3)">Transporte 3</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(4)">Transporte 4</button>
+            <div class="regua">
+                <div class="item-regua perigo-frio">
+                    <h4>Perigo ❄️</h4>
+                    <h2>-80°C</h2>
+                </div>
+                <div class="item-regua alerta-frio">
+                    <h4>Alerta ❄️</h4>
+                    <h2>-40°C</h2>
+                </div>
+                <div class="item-regua ideal">
+                    <h4>Ideal</h4>
+                    <h2>0°C</h2>
+                </div>
+                <div class="item-regua alerta-quente">
+                    <h4>Alerta 🔥</h4>
+                    <h2>6°C</h2>
+                </div>
+                <div class="item-regua perigo-quente">
+                    <h4>Perigo 🔥</h4>
+                    <h2>10°C</h2>
+                </div>
             </div>
-            <div class="graph">
-                <canvas id="canvas_grafico"></canvas>
+
+            <div class="graficos">
+                <h1>Sensor DHT 11 - Umidade</h1>
+                <section style="width:70%">
+                    <canvas id="dht11Umidade"></canvas>
+                </section>
             </div>
+
+            <div class="graficos">
+                <h1>Sensor DHT 11 - Temperatura</h1>
+                <section style="width: 70%;">
+                    <canvas id="dht11Temperatura"></canvas>
+                </section>
+            </div>
+
+            <div class="graficos">
+                <h1>Sensor Luminosidade</h1>
+                <section style="width: 70%;">
+                    <canvas id="luminosidade"></canvas>
+                </section>
+            </div>
+
+            <div class="graficos">
+                <h1>Sensor LM35 - Temperatura</h1>
+                <section style="width: 70%;">
+                    <canvas id="lm35Temperatura"></canvas>
+                </section>
+            </div>
+
+            <div class="graficos">
+                <h1>Sensor Chave</h1>
+                <section style="width: 70%;">
+                    <canvas id="chave"></canvas>
+                </section>
+            </div>
+
         </div>
     </div>
 
@@ -78,17 +135,254 @@
 
 <script>
 
-    let proximaAtualizacao;
-
-    window.onload = obterDadosGrafico(1);
+    window.onload = obterDados;
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    /* -- dht11Umidade -- */
+    var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
+    contextoDht11Umidade.canvas.width = 1000;
+    contextoDht11Umidade.canvas.height = 300;
+    var dht11Umidade = new Chart(
+        contextoDht11Umidade,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Umidade',
+                    type: 'line',
+                    borderColor: ['#45b3e7'],
+                    backgroundColor: ['#89cff0']
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Umidade'
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
+    /* -- dht11Temperatura -- */
+    var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
+    contextoDht11Temperatura.canvas.width = 1000;
+    contextoDht11Temperatura.canvas.height = 300;
+    var dht11Temperatura = new Chart(
+        contextoDht11Temperatura,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: "Temperatura",
+                    type: 'line',
+                    borderColor: ['#ff3232'],
+                    backgroundColor: ['#ff7f7f']
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Luminosidade'
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
+    /* -- luminosidade -- */
+    var contextoLuminosidade = document.getElementById('luminosidade').getContext('2d');
+    contextoLuminosidade.canvas.width = 1000;
+    contextoLuminosidade.canvas.height = 300;
+    var luminosidade = new Chart(
+        contextoLuminosidade,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Luminosidade',
+                    type: 'line',
+                    borderColor: ['#ffd902'],
+                    backgroundColor: ['#ffe135']
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Luminosidade'
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
+    /* -- lm35Temperatura */
+    var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
+    contextoLm35Temperatura.canvas.width = 1000;
+    contextoLm35Temperatura.canvas.height = 300;
+    var lm35Temperatura = new Chart(
+        contextoLm35Temperatura,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Temperatura',
+                    type: 'line',
+                    borderColor: ['#ffd902'],
+                    backgroundColor: ['#ffe135']
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Temperatura'
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
+    /* -- chave */
+    var contextoChave = document.getElementById('chave').getContext('2d');
+    contextoChave.canvas.width = 1000;
+    contextoChave.canvas.height = 300;
+    var chave = new Chart(
+        contextoChave,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Chave',
+                    type: 'line',
+                    borderColor: ['#ffd902'],
+                    backgroundColor: ['#ffe135']
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Chave'
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
+
+    var paginacao = {};
+    var tempo = {};
+    function obterDados(grafico, endpoint, idAquario) {
+        var http = new XMLHttpRequest();
+        http.open('GET', 'http://localhost:3000/sensores/' + endpoint, false);
+        http.send(null);
+        var valores = JSON.parse(http.responseText);
+        if (paginacao[endpoint] == null) {
+            paginacao[endpoint] = 0;
+        }
+        if (tempo[endpoint] == null) {
+            tempo[endpoint] = 0;
+        }
+        // Exibir à partir do último elemento exibido anteriormente
+        var ultimaPaginacao = paginacao[endpoint];
+        paginacao[endpoint] = valores.length;
+        var valores = valores.slice(ultimaPaginacao);
+        valores.forEach((valor) => {
+            //Máximo de 60 itens exibidos no gráfico
+            if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+                grafico.data.labels.shift();
+                grafico.data.datasets[0].data.shift();
+            }
+
+            grafico.data.labels.push(tempo[endpoint]++);
+            grafico.data.datasets[0].data.push(parseFloat(valor));
+            grafico.update();
+        })
+    }
+
+    setInterval(() => {
+        obterDados(dht11Umidade, 'dht11/umidade');
+        obterDados(dht11Temperatura, 'dht11/temperatura');
+        obterDados(luminosidade, 'luminosidade');
+        obterDados(lm35Temperatura, 'lm35/temperatura');
+        obterDados(chave, 'chave');
+    }, 1000);
 
     //verificar_autenticacao();
 
     // altere aqui como os dados serão exibidos
     // e como são recuperados do BackEnd
-    function obterDadosGrafico(idTransporte) {
+    function obterDados(idTransporte) {
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
@@ -190,14 +484,14 @@
         });
 
         function sendData() {
-			var http = new XMLHttpRequest();
-			http.open('POST', 'http://localhost:3000/api/sendData', false);
-			http.send(null);
-		}
+            var http = new XMLHttpRequest();
+            http.open('POST', 'http://localhost:3000/api/sendData', false);
+            http.send(null);
+        }
 
         setInterval(() => {
-			sendData();
-		}, 2000);
+            sendData();
+        }, 2000);
 
         //Atualiza os dados de 5 em 5 segundos
         setTimeout(() => atualizarGrafico(idTransporte, dados), 2000);
