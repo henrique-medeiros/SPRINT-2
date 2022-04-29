@@ -216,7 +216,7 @@ body #espacamento {
 
 .card  h2 {
   color: #32b9cd;
-  
+  margin-top: 0px;
 }
 
 .formularioLog {
