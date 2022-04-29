@@ -209,7 +209,7 @@ body #espacamento {
 }
 
 .bannerLog {
-  height: 617px;
+  height: 555px;
   background-image: url("../../Imagens site/fundo mao.jpg");
   background-size: cover;
 }
@@ -228,7 +228,7 @@ body #espacamento {
   align-items: center;
   justify-content:center;
   margin: auto;
-  margin-top: 60%;
+  margin-top: 40%;
   padding: 10px 0;
   border-radius: 20px;
   margin-bottom: 12%;
