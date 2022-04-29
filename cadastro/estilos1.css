@@ -1,0 +1,237 @@
+
+
+    body{
+    margin: 0px;
+    }
+    .corpo {
+    margin: 0;
+    font-family: monospace;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .header {
+        border-bottom: 3px solid #32b9cd;
+        background-color: #ffffff;
+        width: 100vw;
+        height: 15vh;
+        position: fixed;
+    }
+
+    .header .container {
+        justify-content: space-between;
+    }
+
+    .header a {
+        text-decoration: none;
+        color: #000000;
+    }
+
+    li:hover {
+        text-decoration: underline;
+    }
+
+    .titulo {
+        margin: 0;
+        color: #32b9cd;
+    }
+
+    .container {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        color: white;
+    }
+
+    .header .container {
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+
+    .navbar {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        color: #32b9cd;
+    }
+
+    .agora {
+        font-weight: 650;
+        color: #32b9cd;
+    }
+
+    #faleconosco {
+        background-color: #32b9cd;
+        padding: 1.5%;
+        border-radius: 100px;
+        margin-left: 3%;  
+        border: 1px solid black;
+        box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.1);
+    }
+
+    .titulo {
+        color: #32b9cd;
+        width: fit-content;
+        font-weight: 500;
+        font-size: 35px;
+        background-color: white;
+    }
+
+    .fundo {
+        background-image:url(imagens/bg-propaganda-vacinas-para-home.png) ;
+        height: 65vh;
+        padding: 40px 0;
+        color: white;
+        background-size: cover;
+    }
+
+    .banner {
+        height: 500px;
+        background-size: cover;
+    }
+
+    .banner .card {
+        background-color: rgba(240, 248, 255, 0.418);
+        height: 450px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .banner .card h1 h4 {
+        color: darkred;
+    }
+
+    .btn {
+        font-family: monospace;
+        margin-top: 10px;
+        border: 0;
+        font-weight: 600;
+        background-color: darkred;
+        color: white;
+        font-size: 18px;
+        border-radius: 4px;
+        padding: 10px 15px;
+
+    }
+
+    input {
+        height: 30px;
+        border: 2px solid #32b9cd;
+        border-radius: 8px;
+    }
+
+    /* Cadastro */
+
+    .containerCad {
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        display: flex;
+        color: #32b9cd;
+    }
+
+    .cardCad {
+        margin-top: 5%;
+    }
+
+    .cardCad  h1 {
+        color: #32b9cd;
+        margin-top: initial;
+        
+    }
+
+    .bannerCL {
+        height: 555px;
+        background-image: url("../Imagens site/fundo mao.jpg");
+        background-size: cover;
+    }
+
+    .bannerCL .cardCad {
+        background-color: white;
+        height: 450px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-around;
+        margin: auto;
+        margin-top: 5%;
+        padding: 10px 0;
+        border-radius: 20px;
+    }
+
+    .btnCad {
+        font-family: monospace;
+        margin-top: 10px;
+        border: 0;
+        font-weight: 600;
+        background-color: #32b9cd;
+        color: white;
+        font-size: 18px;
+        border-radius: 4px;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+
+    
+
+    .letrinhas {
+        font-size: 11px;
+        margin-left: 5%;
+        color: black;
+    }
+
+    /* Login */
+
+    .cardLog {
+        background-color: white; /* ou #ffffff8f */
+        height: 315px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        margin-top: 10%;
+        padding: 10px 0;
+        color: #32b9cd;
+        border-radius: 20px;
+    }
+
+    .btnLog {
+        font-family: monospace;
+        margin-top: 10px;
+        border: 0;
+        font-weight: 600;
+        background-color: #32b9cd;
+        color: white;
+        font-size: 18px;
+        border-radius: 4px;
+        padding: 10px 15px;
+        cursor: pointer;
+        width: 175px;
+    }
+
+/* footer */
+    .footer {
+        background-color: #32b9cd;
+        height: 20vh;
+        color: white;
+        display: flex;
+        font-size: 15px;
+        width: 100%;
+    }
+      
+    .footer .container {
+        justify-content: center;
+    }
+
+    body #espacamento {
+        height: 10vh;
+    }

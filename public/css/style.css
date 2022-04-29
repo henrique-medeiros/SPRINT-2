@@ -7,7 +7,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   background-color: rgb(255, 255, 255);
   overflow-x: hidden;
   background: rgb(0,255,252);
@@ -24,11 +24,14 @@ body {
   border-bottom: 3px solid #32b9cd;
   background-color: #ffffff;
   width: 100vw;
+  height: 15vh;
   position: fixed;
 }
 
 .header .container {
   justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
 .header a {
@@ -41,7 +44,7 @@ body {
 }
 
 .navbar {
-  width: 50%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -181,9 +184,9 @@ body #espacamento {
 /* FOOTER */
 
 .footer {
-  background-color: #000000;
+  background-color: #32b9cd;
   height: 20vh;
-  color: #fff;
+  color: white;
   display: flex;
   font-size: 15px;
   width: 100%;
@@ -191,20 +194,44 @@ body #espacamento {
 
 .footer .container {
   justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 
 /* LOGIN */
 
-.banner .container .card {
-  background-color: #e5e5e5;
-  height: fit-content;
-  width: 400px;
+.containerLog {
+  width: 24%;
+  height: 80%;
+  margin: auto;
+  display: flex;
+  color: #32b9cd;
+}
+
+.bannerLog {
+  height: 617px;
+  background-image: url("../../Imagens site/fundo mao.jpg");
+  background-size: cover;
+}
+
+.card  h2 {
+  color: #32b9cd;
+  
+}
+
+.formularioLog {
+  background-color: white;
+  height: 320px;
+  width: 320px;
   display: flex;
   flex-direction: column;
-  color: palevioletred;
   align-items: center;
-  border-radius: 4px;
+  justify-content:center;
+  margin: auto;
+  margin-top: 60%;
+  padding: 10px 0;
+  border-radius: 20px;
+  margin-bottom: 12%;
 }
 
 .card {
@@ -258,8 +285,17 @@ button {
 }
 
 .formulario {
+  background-color: white;
+  height: 450px;
+  width: 400px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content:space-between;
+  margin: auto;
+  margin-top: 0%;
+  padding: 10px 0;
+  border-radius: 20px;
 }
 
 input {
@@ -459,15 +495,7 @@ input {
   align-items: center;
 }
 
-#simulador {
-  background-color: white;
-  margin: auto;
-  margin-top: 3%;
-  padding: 3%;
-  margin-bottom: 3%;
-  border-radius: 50px;
-  border: solid black 2px;
-}
+
 
 #texto_perda {
   background-color: white;
@@ -505,13 +533,45 @@ button:hover {
 
 /* CADASTRO */
 
+
+
+.headerCad {
+  border-bottom: 3px solid #32b9cd;
+  background-color: #ffffff;
+  width: 100vw;
+  height: 15vh;
+  position: fixed;
+}
+
+.headerCad .containerCad {
+  justify-content: space-between;
+
+}
+
+.headerCad a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.containerCad {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  color: white;
+}
+
+.headerCad .containerCad {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
 .card_medio {
   margin-top: 5%;
+
 }
 
 .container_tamanho-conteudo {
-  width: 80%;
-  height: 80%;
   margin: auto;
   display: flex;
   color: #32b9cd;
@@ -519,11 +579,13 @@ button:hover {
 
 .card_medio  h2 {
   color: #32b9cd;
-  margin-top: initial;
-  
 }
 
-.banner .card_medio {
+.formulario h2 {
+  font-size: 30px;
+}
+
+.bannerCad .card_medio {
   background-color: white;
   height: 450px;
   width: 400px;
@@ -531,13 +593,15 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content:space-around;
-  margin: auto;
   margin-top: 5%;
   padding: 10px 0;
+  padding-bottom: 20px;
   border-radius: 20px;
+  margin: auto;
+  margin-top: 10vh;
 }
 
-.banner {
+.bannerCad {
   height: 555px;
   background-image: url("../../Imagens site/fundo mao.jpg");
   background-size: cover;
@@ -560,4 +624,13 @@ button:hover {
   font-size: 11px;
   margin-left: 5%;
   color: black;
+}
+
+#simulador {
+  background-color: #44e6ff;
+  padding: 1.5%;
+  border-radius: 100px;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  border: solid black 2px;
 }
