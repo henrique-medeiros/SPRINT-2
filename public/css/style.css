@@ -286,7 +286,7 @@ button {
 
 .formulario {
   background-color: white;
-  height: 450px;
+  height: 4500px;
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -566,18 +566,9 @@ button:hover {
   height: 100%;
 }
 
-.card_medio {
-  margin-top: 5%;
-
-}
-
 .container_tamanho-conteudo {
   margin: auto;
   display: flex;
-  color: #32b9cd;
-}
-
-.card_medio  h2 {
   color: #32b9cd;
 }
 
@@ -593,12 +584,25 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content:space-around;
-  margin-top: 5%;
   padding: 10px 0;
   padding-bottom: 20px;
   border-radius: 20px;
   margin: auto;
   margin-top: 10vh;
+}
+
+.bannerCad .card_medio2 {
+  background-color: white;
+  height: 450px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-around;
+  padding: 10px 0;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 25vh;
 }
 
 .bannerCad {
