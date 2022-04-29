@@ -226,12 +226,12 @@
         display: flex;
         font-size: 15px;
         width: 100%;
-      }
+    }
       
-      .footer .container {
+    .footer .container {
         justify-content: center;
-      }
+    }
 
-      body #espacamento {
-  height: 10vh;
-}
+    body #espacamento {
+        height: 10vh;
+    }
