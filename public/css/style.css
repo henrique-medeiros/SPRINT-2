@@ -110,6 +110,7 @@ body #espacamento {
   background: white;
   margin-top: 2%;
   border-bottom: 1px solid black;
+  font-family: monospace;
 }
 
 #title_social {
@@ -136,10 +137,13 @@ body #espacamento {
 
 .social .container .boxes {
   display: flex;
+  margin: auto;
+  justify-content: center;
 }
 
 .social p {
-  text-align: center;
+  justify-content: center;
+  align-self: center;
 }
 
 .box {
@@ -147,7 +151,13 @@ body #espacamento {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 70px;
+  justify-content: center;
+}
+
+.pilar_texto {
+  align-self: initial;
+  width: 90%;
 }
 
 .social_exp {
@@ -633,4 +643,8 @@ button:hover {
   margin-top: 3%;
   margin-bottom: 3%;
   border: solid black 2px;
+}
+
+.box img {
+  width: 150px;
 }
