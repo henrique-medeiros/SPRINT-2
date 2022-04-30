@@ -219,7 +219,7 @@ body #espacamento {
 }
 
 .bannerLog {
-  height: 555px;
+  height: 90vh;
   background-image: url("../../Imagens site/fundo mao.jpg");
   background-size: cover;
 }
@@ -651,4 +651,170 @@ button:hover {
 
 .box img {
   width: 150px;
+}
+
+/* Sobre nós */
+
+.bannerCad {
+  height: 555px;
+  background-image: url("../../Imagens site/fundo mao.jpg");
+  background-size: cover;
+}
+
+#espacamento1 {
+  padding: 36px;
+}
+
+.bannerCad .form{
+  padding-top: 20px;
+  margin: auto;
+  border-top: 10px;
+  top: 20%;
+  left:22%;
+  background-color:white ;
+  height: 360px;
+  width: 1000px;
+  max-width: 50%;
+  border-radius: 10px;
+  padding: 50px;
+  align-items: center;
+  color: black;
+  text-align: justify;
+  box-shadow: 1px 1px 6px #00ffc8;
+}
+
+.title{
+  text-align: center;
+  font-size: 1.8em;
+  color: #32B9CD;
+
+}
+
+.paragrafo1{
+  text-indent:4em
+}
+
+.paragrafo2{
+  text-indent:4em
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+ 
+}
+
+
+/* Sobre nós - Carrosel */
+.carrosel{
+  margin-top: 75px;
+  width: 140%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+.carrosel .carrosel_card .carrosel_image{
+  height: 95px;
+  width: 95px;
+  border-radius: 50%;
+  padding: 8px;
+}
+.carrosel .carrosel_card .carrosel_image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.carrosel_card{
+  position: relative;
+  border-radius: 24px;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 50px;
+  transition: all 0.5s;
+  box-shadow: 1px 1px 6px #00ffc8;
+
+}
+.carrosel_card::before{
+  content:"";
+  position: absolute;
+  height: 33%;
+  width: 100%;
+  background-color: #32b9cd;
+  border-radius: 24px 24px 0 0;
+}
+.carrosel_content{
+  display: flex;
+}
+.carrosel .carrosel_card_content{
+  padding: 5px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.carrosel .carrosel_media_icons{
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 50px;
+}
+.carrosel .carrosel_media_icons img{
+  filter: brightness(1);
+  margin-top: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  max-width: 30px;
+}
+.carrosel .carrosel_media_icons img:hover{
+  filter: brightness(3);
+}
+.carrosel .carrosel_nome{
+  font-size: 18px;
+  font-weight: bold;
+}
+.carrosel .carrosel_email{
+  margin-top: 5px;
+
+}
+/* Animação carrosel*/
+.carroselButton{
+  height: 45px;
+  position: absolute;
+  cursor: pointer;
+  z-index: 1000;
+
+
+}
+.prevButton{
+  top: 113%;
+  left: -0.7%;
+  opacity: 100%;
+  transition: opacity 0.1s;
+}
+.prevButton.none{
+  opacity: 30%;
+  
+}
+.nextButton{
+  top: 113%;
+  right:-0.7%;
+  
+}
+.footerSob {
+  background-color: #32b9cd;
+  height: 20vh;
+  color: white;
+  display: flex;
+  font-size: 15px;
+  width: 100%;
+}
+
+.footerSob .containerSob {
+  margin: auto;
+  justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
 }
