@@ -1,4 +1,3 @@
-// FALTANDO ALTERAR VALORES
 var empresasModel = require("../models/empresasModel");
 
 var sessoes = [];
@@ -26,16 +25,16 @@ function listar(req, res) {
 }
 
 function entrar(req, res) {
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
+    var emailEmpresarial = req.body.emailEmpresarialServer;
+    var senhaEmp = req.body.senhaEmpServer;
 
-    if (email == undefined) {
+    if (emailEmpresarial == undefined) {
         res.status(400).send("Seu email está undefined!");
-    } else if (senha == undefined) {
+    } else if (senhaEmp == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
         
-        empresasModel.entrar(email, senha)
+        empresasModel.entrar(emailEmpresarial, senhaEmp)
             .then(
                 function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);
@@ -63,21 +62,27 @@ function entrar(req, res) {
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadEmpresa.html
-    var nome = req.body.nomeServer;
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
+    var nomeEmpresa = req.body.nomeEmpresaServer;
+    var emailEmpresarial = req.body.emailEmpresarialServer;
+    var telefoneEmpresarial = req.body.telefoneEmpresarialServer;
+    var cidadeEstado = req.body.cidadeEstadoServer;
+    var endereco = req.body.enderecoServer;
+    var complemento = req.body.complementoServer;
+    var cep = req.body.cepServer;
+    var cnpj = req.body.cnpjServer;
+    var senhaEmp = req.body.senhaEmpServer;
 
     // Faça as validações dos valores
-    if (nome == undefined) {
+    if (nomeEmpresa == undefined) {
         res.status(400).send("Seu nome está undefined!");
-    } else if (email == undefined) {
+    } else if (emailEmpresarial == undefined) {
         res.status(400).send("Seu email está undefined!");
-    } else if (senha == undefined) {
+    } else if (senhaEmp == undefined) {
         res.status(400).send("Sua senha está undefined!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo empresasModel.js
-        empresasModel.cadastrar(nome, email, senha)
+        empresasModel.cadastrar(nomeEmpresa, emailEmpresarial, senhaEmp)
             .then(
                 function (resultado) {
                     res.json(resultado);

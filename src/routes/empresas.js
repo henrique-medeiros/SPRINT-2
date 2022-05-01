@@ -1,4 +1,3 @@
-// FALTANDO ALTERAR VALORES
 var express = require("express");
 var router = express.Router();
 
@@ -12,7 +11,7 @@ router.get("/listar", function (req, res) {
     empresasController.listar(req, res);
 });
 
-//Recebendo os dados do html e direcionando para a função cadastrar de empresasController.js
+//Recebendo os dados do html cadEmpresa e direcionando para a função cadastrar de empresasController.js
 router.post("/cadastrar", function (req, res) {
     empresasController.cadastrar(req, res);
 })

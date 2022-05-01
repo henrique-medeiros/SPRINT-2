@@ -18,7 +18,8 @@ cidadeEstado VARCHAR(60),
 endereco VARCHAR(60),
 complemento VARCHAR(45),
 cep CHAR(9),
-cnpj CHAR(18)
+cnpj CHAR(18),
+senhaEmp INT
 )AUTO_INCREMENT 200000;
 
 select * from usuario;

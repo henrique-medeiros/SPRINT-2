@@ -94,10 +94,10 @@
                     <input id="cnpj_input" type="text" placeholder="CNPJ">
 
                     <span class="tipo_campo"></span>
-                    <input id="senha_input" type="password" placeholder="******">
+                    <input id="senhaEmp_input" type="password" placeholder="******">
 
                     <span class="tipo_campo"></span>
-                    <input id="confirmacao_senha_input" type="password" placeholder="******">
+                    <input id="confirmacao_senhaEmp_input" type="password" placeholder="******">
 
                     <span class="letrinhas">Ao clicar em Cadastre-se, você concorda com nossos <b style="color: #32b9cd;">Termos</b>, <b style="color: #32b9cd;">Política de Dados</b> e <b style="color: #32b9cd;">Política de Cookies</b>. Você poderá receber notificações por E-mail e cancelar isso quando quiser.</span>
                     
@@ -146,8 +146,8 @@
         var complementoVar = complemento_input.value;
         var cepVar = cep_input.value;
         var cnpjVar = cnpj_input.value;
-        var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var senhaEmpVar = senhaEmp_input.value;
+        var confirmacaoSenhaEmpVar = confirmacao_senhaEmp_input.value;
 
         if (nomeEmpresaVar == "" || emailEmpresarialVar == "" || telefoneEmpresarialVar == "" || cidadeEstadoVar == "" || enderecoVar == "" || complementoVar == "" || cepVar == "" || cnpjVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
@@ -170,7 +170,7 @@
             setInterval(sumirMensagem, 5000)
         }
 
-        if (senhaVar != confirmacaoSenhaVar) {
+        if (senhaEmpVar != confirmacaoSenhaEmpVar) {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "As senhas inseridas devem ser iguais para prosseguir!";
             finalizarAguardar();
@@ -197,7 +197,7 @@
                 complementoServer: complementoVar,
                 cepServer: cepVar,
                 cnpjServer: cnpjVar,
-                senhaServer: senhaVar
+                senhaEmpServer: senhaEmpVar
             })
         }).then(function (resposta) {
 
