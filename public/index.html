@@ -67,7 +67,8 @@
                     <img src="../Imagens site/missao5.png" alt="icone da missão">
                     <h4>Missão</h4>
                     <div class="pilar_texto">
-                    <p>Desenvolver e comercializar serviços de monitoramento <br> que priorize meios tecnológicos para diminuir o desperdício de termolábeis.</p>
+                        <p>Desenvolver e comercializar serviços de monitoramento que priorize meios tecnológicos para
+                            diminuir o desperdício de termolábeis.</p>
                     </div>
                 </div>
 
@@ -75,7 +76,7 @@
                     <img src="../Imagens site/visao4.png" alt="icone da visão">
                     <h4>Visão</h4>
                     <div class="pilar_texto">
-                    <p>Se tornar a empresa mais reconhecida na indústria da saúde.</p>
+                        <p>Se tornar a empresa mais reconhecida na indústria da saúde.</p>
                     </div>
                 </div>
 
@@ -83,7 +84,7 @@
                     <img src="../Imagens site/valores10.png" alt="icone dos valores">
                     <h4>Valores</h4>
                     <div class="pilar_texto">
-                    <p>Acima de tudo transparência e integridade com nossos clientes e colaboradores.</p>
+                        <p>Acima de tudo transparência e integridade com nossos clientes e colaboradores.</p>
                     </div>
                 </div>
             </div>
@@ -93,37 +94,29 @@
     <div class="social_exp">
         <div class="container">
             <div class="social_cont">
-                <div class="conteudo"><img src="..\Imagens site\tempo.png" alt="">
-                    <b>Monitoramento em tempo real</b>
-                    <p id="texto_social">Através da instalação de precisos sensores de temperatura, damos ao cliente a oportunidade de enxergar seu negócio
-                        por inteiro. Agora, os dados de sua viagem que se referem à temperatura estarão sempre disponíveis para visualização do cliente, para que ele obtenha
-                        maior controle e segurança possíveis.
-                    </p>
+                <div class="conteudo">
+                    <img src="../Imagens site/CONTATO.png">
                 </div>
-                <div class="conteudo"><img src="..\Imagens site\termometro2.png" alt="">
-                    <b>Temperaturas nocivas alertadas</b>
-                    <p id="texto_social"> 
-                        Através de um sistema WEB implementado pela <b>TermoVac</b>, serão estabelecidos parâmetros e métricas de temperatura que alertarão o cliente a respeito de seus produtos.
-                        Pronta para qualquer desvio, nossa tecnologia de IOT está sempre pronta para enfrentar qualquer modo de alteração na temperatura ambiente do local, de forma que
-                        o cliente SEMPRE será alertado.
-                    </p>
-                </div>
-                <div class="conteudo" style="border-bottom: 0"><img src="..\Imagens site\coracao.png" alt="">
-                    <b>Comprometimento com a saúde</b>
-                    <p id="texto_social">
-                        Estamos cientes de nosso trabalho e suas influências. Somos totalmente conscientes de que, lidamos com artigos de interesse público 
-                        que possuem forte influência na vida alheia. Por este motivo, enfrentamos nosso trabalho com seriedade e transparência, de modo que não exista
-                        qualquer incompetência vinda de nossa parte. Possuímos uma forte equipe de profissionais qualificados para lidar com este serviço. 
-                    </p>
+
+                <div class="conteudo2">
+                    <b style="text-align: center">Entre em contato.</b><br>
+                    <input id="in_nome" placeholder="Nome Completo*"><br>
+                    <input id="in_email" placeholder="E-mail*"><br>
+                    <input id="in_mensagem" style="height: 150px" placeholder="Mensagem*">
+                    <div class="texto1">*Itens obrigatórios</div> <br>
+                    <button class="btnContato" onclick="enviar()">Enviar</button>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!--footer inicio-->
     <div class="footer">
         <div class="container">
-            <h1 class="titul"><span style="color: white">t</span><span style="color: white">Vac</span>&copy;</h1>
+            <h1 class="titulo"><span style="color: #00ffc8">t</span><span style="color: #44e6ff">Vac®<br>
+                    <span style="color:black">"O calor é para todos, o frio para poucos. Mas o controle é nosso!"</span>
+                </span></h1>
         </div>
     </div>
     <!--footer fim-->
@@ -133,13 +126,16 @@
 
 <script>
     document.querySelector(".cont")
-    .addEventListener("wheel", function() {
-         if(event.deltaY > 0) {
-            event.target.scrollBy(-1280, 0)
+        .addEventListener("wheel", function () {
+            if (event.deltaY > 0) {
+                event.target.scrollBy(-1280, 0)
 
-         } else {
-            event.target.scrollBy(1280, 0)
-         }
-    })
-    
+            } else {
+                event.target.scrollBy(1280, 0)
+            }
+        })
+
+    function enviar() {
+        alert(`E-mail enviado. Agradecemos o vosso contato`)
+    }
 </script>
