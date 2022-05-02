@@ -282,7 +282,7 @@ text-align: center;
 
 .bannerLog {
   height: 580px;
-  background-image: url("../../Imagens site/fundo mao.jpg");
+  background-image: url("/SPRINTS/SPRINT-2/public/assets/fundo_mao.jpg");
   background-size: cover;
 }
 
@@ -687,7 +687,7 @@ button:hover {
 
 .bannerCad {
   height: 580px;
-  background-image: url("../../Imagens site/fundo mao.jpg");
+  background-image: url("/SPRINTS/SPRINT-2/public/assets/fundo_mao.jpg");
   background-size: cover;
 }
 
@@ -718,7 +718,7 @@ button:hover {
 
 .banner_sobre {
   height: 500px;
-  background-image: url("../../Imagens site/fundo mao.jpg");
+  background-image: url("/SPRINTS/SPRINT-2/public/assets/fundo_mao.jpg");
   background-size: cover;
 }
 
