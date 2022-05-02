@@ -9,6 +9,19 @@ CREATE TABLE usuario (
 	senha VARCHAR(50)
 );
 
+CREATE TABLE empresa (
+idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
+nomeEmpresa VARCHAR(50) NOT NULL,
+emailEmpresarial VARCHAR(60) NOT NULL,
+telefoneEmpresarial CHAR(13),
+cidadeEstado VARCHAR(60),
+endereco VARCHAR(60),
+complemento VARCHAR(45),
+cep CHAR(9),
+cnpj CHAR(18),
+senhaEmp INT
+)AUTO_INCREMENT 200000;
+
 select * from usuario;
 
 CREATE TABLE aviso (
