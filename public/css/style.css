@@ -5,10 +5,11 @@ html {
 }
 
 body {
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: rgb(255, 255, 255);
   overflow-x: hidden;
   background: rgb(0, 255, 252);
   background: linear-gradient(135deg, rgba(0, 255, 252, 1) 0%, rgba(0, 84, 167, 1) 0%, rgba(0, 255, 235, 1) 100%);
@@ -255,7 +256,7 @@ text-align: center;
 
 .footer .container {
   justify-content: center;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .footer .container .titulo {
@@ -280,7 +281,7 @@ text-align: center;
 }
 
 .bannerLog {
-  height: 90vh;
+  height: 580px;
   background-image: url("../../Imagens site/fundo mao.jpg");
   background-size: cover;
 }
@@ -356,17 +357,13 @@ button {
 }
 
 .formulario {
-  background-color: white;
-  height: 4500px;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin: auto;
-  margin-top: 0%;
-  padding: 10px 0;
-  border-radius: 20px;
+  width: 349px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 78px 77px 96px 80px;
+    padding: 91px 15px;
 }
 
 input {
@@ -434,7 +431,6 @@ input {
   display: flex;
   width: 75%;
   height: fit-content;
-  background-color: #161618;
   position: relative;
   top: 0;
   left: 25%;
@@ -690,7 +686,7 @@ button:hover {
 }
 
 .bannerCad {
-  height: 555px;
+  height: 580px;
   background-image: url("../../Imagens site/fundo mao.jpg");
   background-size: cover;
 }
@@ -720,8 +716,8 @@ button:hover {
 
 /* Sobre nós */
 
-.bannerCad {
-  height: 555px;
+.banner_sobre {
+  height: 500px;
   background-image: url("../../Imagens site/fundo mao.jpg");
   background-size: cover;
 }
@@ -730,7 +726,7 @@ button:hover {
   padding: 36px;
 }
 
-.bannerCad .form {
+.banner_sobre .form {
   padding-top: 20px;
   margin: auto;
   border-top: 10px;
@@ -762,13 +758,6 @@ button:hover {
 .paragrafo2 {
   text-indent: 4em
 }
-
-body {
-  width: 100%;
-  height: 100vh;
-
-}
-
 
 /* Sobre nós - Carrosel */
 .carrosel {
