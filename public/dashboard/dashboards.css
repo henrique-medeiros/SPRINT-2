@@ -3,10 +3,12 @@
 *,
 body {
   font-family: "Exo 2", sans-serif;
+
 }
 
 .dash-right .avisos {
   width: 100%;
+  height: 752.5px;
   /* border: 3px solid pink; */
   color: rgb(216, 216, 216);
   font-family: "Exo 2", sans-serif;
@@ -37,8 +39,8 @@ body {
 
 .dash-right .avisos .div-form textarea {
   width: 100%;
-  /* color: #E6005A; */
-  border: 3px solid #e6005a;
+  /* color: #32b9cd; */
+  border: 3px solid #32b9cd;
   background-color: white;
   border-radius: 5px;
 }
@@ -52,7 +54,7 @@ body {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #32b9cd;
   width: 120px;
 }
 
@@ -65,7 +67,7 @@ body {
   font-size: 14px;
   padding: 5px 8px;
   color: white;
-  background-color: #e6005a;
+  background-color: #32b9cd;
   width: 80px;
 }
 
@@ -76,7 +78,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px solid #32b9cd;
   padding: 20px;
 }
 
@@ -106,18 +108,20 @@ body {
 /* pagina graficos */
 
 .dash-header {
-  background-color: #212124;
+  background-color: #ffffff;
 }
 
 .dash {
   width: 75%;
+  height: 100%;
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  position:absolute;
+  justify-content: space-around;
+  position: relative;
   top: 0;
   left: 25%;
+  background: linear-gradient(135deg, rgba(0, 255, 252, 1) 0%, rgba(0, 84, 167, 1) 0%, rgba(0, 255, 235, 1) 100%);
 
   /* width: 75%;
     display: flex;
@@ -125,7 +129,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;*/
-  height: 150%;
+
 }
 
 .regua {
@@ -133,7 +137,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  margin-top: 30px;
+  margin: 50px 9px;
 }
 
 .perigo-frio {
@@ -176,6 +180,7 @@ body {
   height: 450px;
   width: 100%;
   align-items: center;
+  margin-top: 60px;
   color: rgb(0, 0, 0);
 }
 
@@ -188,6 +193,7 @@ body {
   height: 180px;
   justify-content: right;
   background-color: #cce2de;
+  border-radius: 10px;
   font-size: 20px;
 }
 
@@ -242,6 +248,27 @@ body {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #32b9cd;
   margin: 5px;
+}
+
+.grafico1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items:center;
+  height: 150%;
+}
+
+.graficos {
+  margin: 1%;
+  width: 45%;
+  height: 20%;
+  flex-wrap: wrap;
+  display: flex;
+  align-self: center;
+  text-align: center;
+  justify-content:center;
+  background-color: #ffffff79;
+  border-radius: 10px;
 }

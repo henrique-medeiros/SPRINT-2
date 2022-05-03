@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 html {
-  width: 100vw;
+  width: 100%;
 }
 
 body {
@@ -341,7 +341,7 @@ button {
   width: 230px;
   position: fixed;
   border-radius: 4px;
-  border: #e6005a 3px solid;
+  border: #32b9cd 3px solid;
   padding: 10px;
   margin-right: 10%;
 }
@@ -382,7 +382,7 @@ input {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #32b9cd;
   width: 120px;
   align-self: center;
   margin-top: 5px;
@@ -423,7 +423,7 @@ input {
   justify-content: space-evenly;
   align-items: center;
   border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  background-color: #ffffff;
   /* border: 3px solid pink; */
 }
 
@@ -447,7 +447,7 @@ input {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color:#32b9cd;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -459,7 +459,7 @@ input {
 .btn-nav {
   width: 40%;
   color: white;
-  background-color: #e6005a;
+  background-color: #32b9cd;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -468,14 +468,14 @@ input {
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #e6005a;
+  border: 3px solid #32b9cd;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #32b9cd;
   padding: 0;
   margin: 0;
 }
