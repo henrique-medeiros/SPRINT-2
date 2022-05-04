@@ -49,10 +49,10 @@
 
     <div class="banner">
         <div class="cont">
-            <div id="img"><img src="../assets/1.jpg" alt=""></div>
-            <div id="img"><img src="../assets/2.jpg" alt=""></div>
-            <div id="img"><img src="../assets/3.jpg" alt=""></div>
-            <div id="img"><img src="../assets/4.jpg" alt=""></div>
+            <div id="img"><img src="./assets/1.jpg" alt=""></div>
+            <div id="img"><img src="./assets/2.jpg" alt=""></div>
+            <div id="img"><img src="./assets/3.jpg" alt=""></div>
+            <div id="img"><img src="./assets/4.jpg" alt=""></div>
         </div>
     </div>
 
@@ -64,7 +64,7 @@
         <div class="container">
             <div class="boxes">
                 <div class="box">
-                    <img src="../assets/missao5.png" alt="icone da missão">
+                    <img src="./assets/missao5.png" alt="icone da missão">
                     <h4>Missão</h4>
                     <div class="pilar_texto">
                         <p>Desenvolver e comercializar serviços de monitoramento que priorize meios tecnológicos para
@@ -73,15 +73,15 @@
                 </div>
 
                 <div class="box">
-                    <img src="../assets/visao4.png" alt="icone da visão">
+                    <img src="./assets/visao4.png" alt="icone da visão">
                     <h4>Visão</h4>
                     <div class="pilar_texto">
-                        <p>Se tornar a empresa mais reconhecida na área da saúde.</p>
+                        <p>Se tornar a empresa de monitoramento mais reconhecida na área da saúde.</p>
                     </div>
                 </div>
 
                 <div class="box">
-                    <img src="../assets/valores10.png" alt="icone dos valores">
+                    <img src="./assets/valores10.png" alt="icone dos valores">
                     <h4>Valores</h4>
                     <div class="pilar_texto">
                         <p>Acima de tudo transparência e integridade com nossos clientes e colaboradores.</p>
@@ -95,7 +95,7 @@
         <div class="container">
             <div class="social_cont">
                 <div class="conteudo">
-                    <img src="../assets/CONTATO.png">
+                    <img src="./assets/CONTATO.png">
                 </div>
 
                 <div class="conteudo2">
@@ -135,7 +135,13 @@
             }
         })
 
+
+
     function enviar() {
-        alert(`E-mail enviado. Agradecemos o vosso contato`)
+        if(in_email.value != "" || in_nome.value != "" || in_mensagem.value != "") {
+            alert("Agradecemos o seu contato")
+        } else {
+            alert("Preencha os campos corretamente.")
+        }
     }
 </script>
