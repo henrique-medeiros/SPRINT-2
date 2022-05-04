@@ -118,3 +118,10 @@ const servidor = (
         valoresChave
     );
 })();
+
+function limparSessao() {
+    // aguardar();
+    sessionStorage.clear();
+    // finalizarAguardar();
+    window.location = "../login.html";
+}
