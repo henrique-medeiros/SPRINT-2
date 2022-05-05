@@ -568,35 +568,54 @@ input {
   height: 100%;
 }
 
-#box_conta {
+#texto_conta {
+  display: flex;
+  width: 30%;
+  height: 350px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 3%;
+  padding: 13px;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  border-radius: 20px;
+  flex-direction: column;
+  display: none;
+}
+
+#porcentagem_texto {
+  margin-top: 1%;
+}
+
+#box_conta .container {
   display: flex;
   align-items: center;
   margin: 0 auto;
   margin-bottom: 3%;
+  justify-content: space-around;
 }
-
 
 
 #texto_perda {
   background-color: white;
   padding: 4%;
   border: #000000 1px solid;
-  display: none;
   height: 2vh;
-  margin-top: 10%;
-  margin-right: auto;
-  color: red
+  margin-top: 4%;
+  color: red;
+  display: none;
 }
 
 #texto_economia {
   background-color: white;
   padding: 4%;
   border: #000000 1px solid;
-  display: none;
   height: 2vh;
-  margin-top: 10%;
-  margin-left: auto;
+  margin-top: 4%;
   color: green;
+  display: none;
 }
 
 select {
@@ -898,3 +917,57 @@ button:hover {
   justify-content: center;
   font-family: 'Times New Roman', Times, serif;
 }
+
+#texto_perda {
+  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 3s; /* Firefox < 16 */
+      -ms-animation: fadein 3s; /* Internet Explorer */
+       -o-animation: fadein 3s; /* Opera < 12.1 */
+          animation: fadein 3s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+#texto_economia {
+  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 3s; /* Firefox < 16 */
+      -ms-animation: fadein 3s; /* Internet Explorer */
+       -o-animation: fadein 3s; /* Opera < 12.1 */
+          animation: fadein 3s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+#texto_conta {
+  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 3s; /* Firefox < 16 */
+      -ms-animation: fadein 3s; /* Internet Explorer */
+       -o-animation: fadein 3s; /* Opera < 12.1 */
+          animation: fadein 3s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+html {
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 1s; /* Firefox < 16 */
+      -ms-animation: fadein 1s; /* Internet Explorer */
+       -o-animation: fadein 1s; /* Opera < 12.1 */
+          animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from { opacity: 0.85; }
+  to   { opacity: 1; }
+}
+

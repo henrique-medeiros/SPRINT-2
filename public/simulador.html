@@ -64,7 +64,7 @@
                     Após estudos realizados por nossa equipe, disponibilizamos para sua experiência, a oportunidade de observar as perdas de seu ambiente de trabalho 
                     COM nossos serviços, e SEM os nossos serviços. Assim, você pode tirar suas próprias conclusões acerca dos benefícios de nossos serviços. <p>Para isso,
                     fizemos um cálculo que relaciona a perda das vacinas ocorridas em meio ao trabalho, e estabelecemos uma comparação entre as perdas das vacinas em dinheiro
-                    estando conosco, e sem estar conosco.</p>
+                    estando conosco, e sem estar conosco. A economia é de</p>
                 
             </div>
             <div id="simulador">
@@ -82,6 +82,14 @@
                 Média de viagens por dia: <br> <input id="in_viagens" placeholder="Viagens feitas em um dia"> <br><br>
                 <button onclick="desperdicio()">Ver Desperdício</button><br><br>
                     </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="texto_conta">
+            Através dos dados requisitados, a TermoVac pôde realizar uma estimativa de quanto nossos clientes poderiam ter suas perdas drasticamente reduzidas com nossos serviços. Neste
+            caso, obtemos os valores das vacinas e os dados que se referiam ao transporte das mesmas. Dessa maneira, pudemos estipular as perdas que você, cliente, possui em média, e, por meio de uma taxa estudada por nossa equipe, reduzimos suas perdas em 70% para que elas fossem semelhantes às obtidas conosco.
+            <div id="porcentagem_texto"></div>
         </div>
     </div>
 
@@ -104,12 +112,20 @@
         var quantidade = Number(in_quantidade.value)
         var taxa = Number(in_taxa.value)
         var viagem = Number(in_viagens.value)
+        var desperdicio = Number(vacina*taxa*viagem)
+        var economia = desperdicio*0.3
         if (vacina > 0 && quantidade > 0 && taxa > 0 && viagem > 0) {
-        texto_perda.style.display = 'flex'
-        texto_economia.style.display = 'flex'
-        texto_perda.innerHTML = `Desperdício diário sem nossos serviços em R$: ${(((vacina * quantidade) * taxa / 100) * viagem).toFixed(2)}`
-        texto_economia.innerHTML = `Desperdício diário com nossos serviços em R$: ${(0.2*((vacina * quantidade) * taxa / 100) * viagem).toFixed(2)}`
-        window.scrollTo({ top: 2000, behavior: 'smooth' });
+            if(quantidade > taxa) {
+            texto_perda.style.display = 'flex'
+            texto_economia.style.display = 'flex'
+            texto_conta.style.display = 'flex'
+            texto_perda.innerHTML = `Desperdício diário sem nossos serviços em R$: ${desperdicio.toFixed(2)}`
+            texto_economia.innerHTML = `Desperdício diário com nossos serviços em R$: ${economia.toFixed(2)}`
+            porcentagem_texto.innerHTML = `<b>Você perde ${((desperdicio)/(vacina*quantidade*viagem)*100).toFixed(2)}% do valor total dos produtos.<br> <span style="color:blue">Conosco perderia ${((economia)/(vacina*quantidade*viagem)*100).toFixed(2)}%.</span></b>`
+            window.scrollTo({ top: 700, behavior: 'smooth' });
+            } else {
+                alert("Insira os valores correspondentes.")
+            }
         } else {
             alert("Insira os valores correspondentes.")
         }
