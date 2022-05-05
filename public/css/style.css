@@ -570,20 +570,26 @@ input {
 
 #texto_conta {
   display: flex;
-  width: 30%;
-  height: 350px;
+  /* width: 30%; */
+  /* height: 366px; */
   background-color: white;
-  margin: 0 auto;
-  margin-top: 3%;
-  padding: 13px;
+  margin: 3% 12.5%;
+  /* margin-top: 3%; */
+  padding: 19px 51px 11px 40px;
   font-size: 20px;
   justify-content: center;
   align-items: center;
   text-align: justify;
-  border-radius: 20px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
   flex-direction: column;
   display: none;
+  border: solid 2px black;
 }
+
+#config_texto {
+  width: 100%;
+  }
 
 #porcentagem_texto {
   margin-top: 1%;

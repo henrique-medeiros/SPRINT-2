@@ -86,10 +86,10 @@
     </div>
 
     <div class="container">
-        <div id="texto_conta">
-            Através dos dados requisitados, a TermoVac pôde realizar uma estimativa de quanto nossos clientes poderiam ter suas perdas drasticamente reduzidas com nossos serviços. Neste
-            caso, obtemos os valores das vacinas e os dados que se referiam ao transporte das mesmas. Dessa maneira, pudemos estipular as perdas que você, cliente, possui em média, e, por meio de uma taxa estudada por nossa equipe, reduzimos suas perdas em 70% para que elas fossem semelhantes às obtidas conosco.
-            <div id="porcentagem_texto"></div>
+        <div id="texto_conta"><span id="config_texto" style="width: 100%;">
+            Através dos dados requisitados, a TermoVac pôde realizar uma estimativa de quanto nossos clientes poderiam ter suas perdas drasticamente reduzidas com nossos serviços. Neste caso, obtemos os valores das vacinas e os dados que se referiam ao transporte das mesmas. <br><br>
+            Dessa maneira, pudemos estipular as perdas que você, cliente, possui em média, e, por meio de uma taxa estudada por nossa equipe, reduzimos suas perdas em 70% para que elas fossem semelhantes às obtidas conosco.</span>
+            <p id="porcentagem_texto"></p>
         </div>
     </div>
 
@@ -116,12 +116,12 @@
         var economia = desperdicio*0.3
         if (vacina > 0 && quantidade > 0 && taxa > 0 && viagem > 0) {
             if(quantidade > taxa) {
-            texto_perda.style.display = 'flex'
-            texto_economia.style.display = 'flex'
-            texto_conta.style.display = 'flex'
+            texto_perda.style.display = 'block'
+            texto_economia.style.display = 'block'
+            texto_conta.style.display = 'block'
             texto_perda.innerHTML = `Desperdício diário sem nossos serviços em R$: ${desperdicio.toFixed(2)}`
             texto_economia.innerHTML = `Desperdício diário com nossos serviços em R$: ${economia.toFixed(2)}`
-            porcentagem_texto.innerHTML = `<b>Você perde ${((desperdicio)/(vacina*quantidade*viagem)*100).toFixed(2)}% do valor total dos produtos.<br> <span style="color:blue">Conosco perderia ${((economia)/(vacina*quantidade*viagem)*100).toFixed(2)}%.</span></b>`
+            porcentagem_texto.innerHTML = `<b>Você perde ${((desperdicio)/(vacina*quantidade*viagem)*100).toFixed(2)}% do valor total dos produtos. <span style="color:blue">Conosco perderia ${((economia)/(vacina*quantidade*viagem)*100).toFixed(2)}%.</span></b>`
             window.scrollTo({ top: 700, behavior: 'smooth' });
             } else {
                 alert("Insira os valores correspondentes.")
