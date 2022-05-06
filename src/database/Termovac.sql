@@ -22,10 +22,9 @@ cnpj CHAR(18),
 senhaEmp INT
 )AUTO_INCREMENT 200000;
 
-select * from usuario;
 
 CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	id INT PRIMARY KEY,
 	titulo VARCHAR(100),
     descricao VARCHAR(150),
 	fk_usuario INT,
@@ -38,3 +37,7 @@ CREATE TABLE medida (
 	momento DATETIME,
 	fk_transporte INT
 );
+
+select * from usuario;
+select * from aviso;
+select * from medida;

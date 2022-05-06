@@ -16,6 +16,10 @@ body {
   scroll-behavior: smooth;
 }
 
+.b_corpo{
+height: 100%;
+}
+
 .container {
   width: 80%;
   margin: auto;
@@ -430,6 +434,7 @@ input {
 .dash-right {
   display: flex;
   width: 75%;
+  height: 100vh;
   height: fit-content;
   position: relative;
   top: 0;

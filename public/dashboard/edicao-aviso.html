@@ -8,8 +8,9 @@
     <title>Termovac | Edição de Ajuda</title>
 
     <link rel="icon" href="./assets/LOGO2.png">
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
     <link rel="stylesheet" href="./dashboards.css">
+    <link rel="stylesheet" href="./mural.css">
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -115,7 +116,7 @@
 
             if (resposta.ok) {
                 window.alert("Post atualizado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
-                window.location = "/index1/mural.html"
+                window.location = "./mural.html"
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
