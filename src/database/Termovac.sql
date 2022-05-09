@@ -24,7 +24,7 @@ senhaEmp INT
 
 
 CREATE TABLE aviso (
-	id INT PRIMARY KEY,
+	id INT PRIMARY KEY auto_increment,
 	titulo VARCHAR(100),
     descricao VARCHAR(150),
 	fk_usuario INT,
