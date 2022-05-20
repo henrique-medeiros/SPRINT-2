@@ -58,18 +58,39 @@
         </div>
 
         <div class="dash">
-            <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <button class="btn-chart" onclick="obterDadosGrafico(1)">Transporte 1</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(2)">Transporte 2</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(3)">Transporte 3</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(4)">Transporte 4</button>
-            </div>
-            <div class="graph">
-                <canvas id="canvas_grafico"></canvas>
+            <div class="regua">
+                <div class="item-regua perigo-frio">
+                    <h4>Perigo ❄️</h4>
+                    <h2>-80°C</h2>
+                </div>
+                <div class="item-regua alerta-frio">
+                    <h4>Alerta ❄️</h4>
+                    <h2>-40°C</h2>
+                </div>
+                <div class="item-regua ideal">
+                    <h4>Ideal</h4>
+                    <h2>0°C</h2>
+                </div>
+                <div class="item-regua alerta-quente">
+                    <h4>Alerta 🔥</h4>
+                    <h2>6°C</h2>
+                </div>
+                <div class="item-regua perigo-quente">
+                    <h4>Perigo 🔥</h4>
+                    <h2>10°C</h2>
+                </div>
+                <div class="btns-dash">
+                    <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+                    <button class="btn-chart" onclick="obterDadosGrafico(1)">Transporte 1</button>
+                    <button class="btn-chart" onclick="obterDadosGrafico(2)">Transporte 2</button>
+                    <button class="btn-chart" onclick="obterDadosGrafico(3)">Transporte 3</button>
+                    <button class="btn-chart" onclick="obterDadosGrafico(4)">Transporte 4</button>
+                </div>
+                <div class="graph">
+                    <canvas id="canvas_grafico"></canvas>
+                </div>
             </div>
         </div>
-    </div>
 
 
 </body>
@@ -119,14 +140,6 @@
             labels: [],
             datasets: [
                 {
-                    yAxisID: 'y-umidade',
-                    label: 'Umidade',
-                    borderColor: '#32B9CD',
-                    backgroundColor: '#32b9cd8f',
-                    fill: true,
-                    data: []
-                },
-                {
                     yAxisID: 'y-temperatura',
                     label: 'Temperatura',
                     borderColor: '#FFF',
@@ -140,8 +153,8 @@
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
             dados.labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.umidade);
-            dados.datasets[1].data.push(registro.temperatura);
+            //dados.datasets[0].data.push(registro.umidade);
+            dados.datasets[0].data.push(registro.temperatura);
         }
 
         console.log(JSON.stringify(dados));
@@ -157,7 +170,7 @@
                 stacked: false,
                 title: {
                     display: true,
-                    text: 'Histórico recente de umidade/temperatura'
+                    text: 'Histórico recente de temperatura'
                 },
                 scales: {
                     yAxes: [{
@@ -168,36 +181,22 @@
                         ticks: {
                             beginAtZero: true,
                             max: 100,
-                            min: 0
+                            min: -100
                         }
-                    }, {
-                        type: 'linear',
-                        display: false,
-                        position: 'right',
-                        id: 'y-umidade',
-                        ticks: {
-                            beginAtZero: true,
-                            max: 100,
-                            min: 0
-                        },
-
-                        gridLines: {
-                            drawOnChartArea: false,
-                        },
                     }],
                 }
             }
         });
 
         function sendData() {
-			var http = new XMLHttpRequest();
-			http.open('POST', 'http://localhost:3000/api/sendData', false);
-			http.send(null);
-		}
+            var http = new XMLHttpRequest();
+            http.open('POST', 'http://localhost:3000/api/sendData', false);
+            http.send(null);
+        }
 
         setInterval(() => {
-			sendData();
-		}, 2000);
+            sendData();
+        }, 2000);
 
         //Atualiza os dados de 5 em 5 segundos
         setTimeout(() => atualizarGrafico(idTransporte, dados), 2000);
@@ -217,10 +216,8 @@
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
-                    dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                    dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
-                    dados.datasets[1].data.shift();  // apagar o primeiro de umidade
-                    dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de umidade
+                    dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+                    dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
                     window.grafico_linha.update();
 
