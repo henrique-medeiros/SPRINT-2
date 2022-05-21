@@ -60,18 +60,23 @@
             <div class="avisos">
                 <div class="container">
                     <h1>Publicar uma ajuda</h1>
-                    <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
+                    <div class="div-form" >
+                        <form action="https://api.staticforms.xyz/submit" method="post" id="form_postagem" method="post" onsubmit="return publicar()">
+                            <input type="hidden" name="accessKey" value="5d7e4b83-f407-4838-b61d-e59b013e68d4">
+                            <input type="hidden" name="redirectTo" value="http://localhost:3333/dashboard/mural.html">
                             <label>
-                                Assunto:
-                                <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
+                                Nome:
+                                <input type="text" name="name" id="titulo" maxlength="100" type="text">
+                            </label>
+                            <br>
+                            <label>
+                                E-mail:
+                                <input type="email" name="email" id="titulo" maxlength="100" type="text">
                             </label>
                             <br>
                             <label>
                                 Descrição (máximo de 250 caracteres):
-                                <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                                <textarea name="message" id="textarea_descricao" maxlength="250" rows="5"></textarea>
                             </label>
                             <br>
                             <button onclick="enviar()">Enviar</button>
