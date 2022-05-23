@@ -41,3 +41,10 @@ CREATE TABLE medida (
 select * from usuario;
 select * from aviso;
 select * from medida;
+
+DROP TABLE MEDIDA;
+
+insert into medida values (null, 20, '2022-05-20 14:18:00', 1),
+(null, 2, '2022-05-20 13:18:00', 1),
+						  (null, 8, '2022-05-20 15:18:00', 1),
+						  (null, -10,'2022-05-20 17:18:00', 1);
