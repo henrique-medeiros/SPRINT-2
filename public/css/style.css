@@ -527,7 +527,7 @@ input {
 
 #titulo {
   display: flex;
-  color: rgb(255, 255, 255);
+  color: #000000;
   margin-top: 5%;
   justify-content: center;
   font-weight: 700;

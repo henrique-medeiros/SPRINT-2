@@ -22,7 +22,7 @@ var mySqlConfig = {
     host: "localhost",
     user: "root",
     database:"termovac",
-    password: "#Gf47139014825",
+    password: "#Gf40928326802",
 };
 
 function executar(instrucao) {
