@@ -6,16 +6,17 @@ function listar() {
         SELECT 
             a.id AS idAviso,
             a.titulo,
-            a.email,
+            a.AvisoEmail,
             a.descricao,
             a.fk_usuario,
             u.id AS idUsuario,
             u.nome,
-            u.email,
+            u.AvisoEmail,
             u.senha
         FROM aviso a
             INNER JOIN usuario u
-                ON a.fk_usuario = u.id;
+                ON a.fk_usuario = u.id
+                  and a.AvisoEmail = u.AvisoEmail;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -27,16 +28,17 @@ function pesquisarDescricao(texto) {
         SELECT 
             a.id AS idAviso,
             a.titulo,
-            a.email,
+            a.AvisoEmail,
             a.descricao,
             a.fk_usuario,
             u.id AS idUsuario,
             u.nome,
-            u.email,
+            u.AvisoEmail,
             u.senha
         FROM aviso a
             INNER JOIN usuario u
-                ON a.fk_usuario = u.id
+            ON a.fk_usuario = u.id
+            and a.AvisoEmail = u.AvisoEmail
         WHERE a.descricao LIKE '${texto}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
@@ -49,12 +51,12 @@ function listarPorUsuario(idUsuario) {
         SELECT 
             a.id AS idAviso,
             a.titulo,
-            a.email,
+            a.AvisoEmail,
             a.descricao,
             a.fk_usuario,
             u.id AS idUsuario,
             u.nome,
-            u.email,
+            u.AvisoEmail,
             u.senha
         FROM aviso a
             INNER JOIN usuario u
@@ -65,32 +67,32 @@ function listarPorUsuario(idUsuario) {
     return database.executar(instrucao);
 }
 
-function listarPorEmail(email) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPorEmail()");
+function listarPorAvisoEmail(AvisoEmail) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPorAvisoEmail()");
     var instrucao = `
         SELECT 
             a.id AS idAviso,
             a.titulo,
-            a.email,
+            a.AvisoAvisoEmail,
             a.descricao,
             a.fk_usuario,
             u.id AS idUsuario,
             u.nome,
-            u.email,
+            u.AvisoEmail,
             u.senha
         FROM aviso a
             INNER JOIN usuario u
                 ON a.fk_usuario = u.id
-        WHERE u.email = ${email};
+        WHERE a.AvisoAvisoEmail LIKE ${AvisoEmail};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function publicar(titulo, email, descricao, idUsuario) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", titulo, email, descricao, idUsuario);
+function publicar(titulo, AvisoEmail, descricao, idUsuario) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", titulo, AvisoEmail, descricao, idUsuario);
     var instrucao = `
-        INSERT INTO aviso (titulo, email, descricao, fk_usuario) VALUES ('${titulo}', '${email}', '${descricao}', ${idUsuario});
+        INSERT INTO aviso (titulo, AvisoEmail, descricao, fk_usuario) VALUES ('${titulo}', '${AvisoEmail}', '${descricao}', ${idUsuario});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -117,7 +119,7 @@ function deletar(idAviso) {
 module.exports = {
     listar,
     listarPorUsuario,
-    listarPorEmail,
+    listarPorAvisoEmail,
     pesquisarDescricao,
     publicar,
     editar,

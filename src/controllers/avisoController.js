@@ -44,10 +44,10 @@ function listarPorUsuario(req, res) {
         );
 }
 
-function listarPorEmail(req, res) {
-    var email = req.params.email;
+function listarPorAvisoEmail(req, res) {
+    var AvisoEmail = req.params.AvisoEmail;
 
-    avisoModel.listarPorEmail(email)
+    avisoModel.listarPorAvisoEmail(AvisoEmail)
         .then(
             function (resultado) {
                 if (resultado.length > 0) {
@@ -92,20 +92,20 @@ function pesquisarDescricao(req, res) {
 
 function publicar(req, res) {
     var titulo = req.body.titulo;
-    var email = req.body.email;
+    var AvisoEmail = req.body.AvisoEmail;
     var descricao = req.body.descricao;
     var idUsuario = req.params.idUsuario;
 
     if (titulo == undefined) {
         res.status(400).send("O título está indefinido!");
-    }  else if (email == undefined) {
-        res.status(400).send("O email está indefinido!");}
+    }  else if (AvisoEmail == undefined) {
+        res.status(400).send("O AvisoEmail está indefinido!");}
     else if (descricao == undefined) {
         res.status(400).send("A descrição está indefinido!");
     } else if (idUsuario == undefined) {
         res.status(403).send("O id do usuário está indefinido!");
     } else {
-        avisoModel.publicar(titulo, email, descricao, idUsuario)
+        avisoModel.publicar(titulo, AvisoEmail, descricao, idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -163,7 +163,7 @@ module.exports = {
     testar,
     listar,
     listarPorUsuario,
-    listarPorEmail,
+    listarPorAvisoEmail,
     pesquisarDescricao,
     publicar,
     editar,
