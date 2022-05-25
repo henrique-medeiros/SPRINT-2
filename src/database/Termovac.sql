@@ -26,7 +26,7 @@ senhaEmp INT
 CREATE TABLE aviso (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
-    email VARCHAR(45),
+    AvisoEmail VARCHAR(45),
 	descricao VARCHAR(150),
 	fk_usuario INT,
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
