@@ -24,9 +24,10 @@ senhaEmp INT
 
 
 CREATE TABLE aviso (
-	id INT PRIMARY KEY auto_increment,
+	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
-    descricao VARCHAR(150),
+    email VARCHAR(45),
+	descricao VARCHAR(150),
 	fk_usuario INT,
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
@@ -42,7 +43,7 @@ select * from usuario;
 select * from aviso;
 select * from medida;
 
-DROP TABLE MEDIDA;
+DROP TABLE AVISO;
 
 insert into medida values (null, 20, '2022-05-20 14:18:00', 1),
 (null, 2, '2022-05-20 13:18:00', 1),
