@@ -15,10 +15,6 @@ router.get("/listar/:idUsuario", function (req, res) {
     avisoController.listarPorUsuario(req, res);
 });
 
-router.get("/listar/:email", function (req, res) {
-    avisoController.listarPorEmail(req, res);
-});
-
 router.get("/pesquisar/:descricao", function (req, res) {
     avisoController.pesquisarDescricao(req, res);
 });
