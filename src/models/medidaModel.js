@@ -2,7 +2,7 @@ var database = require("../database/config");
 
 function buscarUltimasMedidas(idTransporte, limite_linhas) {
     instrucaoSql = `select 
-                        temperatura, 
+                        lm35_temperatura, 
                         momento,
                         DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico
                     from medida
@@ -14,7 +14,8 @@ function buscarUltimasMedidas(idTransporte, limite_linhas) {
 
 function buscarMedidasEmTempoReal(idTransporte) {
     instrucaoSql = `select 
-                        temperatura, 
+    
+                        lm35_temperatura, 
                         DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, 
                         fk_transporte 
                         from medida where fk_transporte = ${idTransporte} 
