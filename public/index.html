@@ -99,13 +99,13 @@
                 </div>
 
                 <div class="conteudo2">
-                    <form action="https://api.staticforms.xyz/submit" id="form_postagem" method="post" onsubmit="return publicar()">
+                    <form action="https://api.staticforms.xyz/submit" method="post">
                         <input type="hidden" name="accessKey" value="0ddbe837-00db-4ca1-a2b8-ff2a9a7a958e">
-                        <input type="hidden" name="redirectTo" value="http://localhost:3333/dashboard/mural.html">
+                        <input type="hidden" name="redirectTo" value="http://localhost:3333/index.html">
                     <b style="text-align: center">Entre em contato.</b><br>
-                    <input id="in_nome" placeholder="Nome Completo*"><br>
-                    <input id="in_email" placeholder="E-mail*"><br>
-                    <input id="in_mensagem" style="height: 150px" placeholder="Mensagem*">
+                    <input type="text" name="name" id="in_nome" placeholder="Nome Completo*"><br>
+                    <input type="text" name="email" id="in_email" placeholder="E-mail*"><br>
+                    <input name="message" id="in_mensagem" style="height: 150px" placeholder="Mensagem*">
                     <div class="texto1">*Itens obrigatórios</div> <br>
                     <button class="btnContato" onclick="enviar()">Enviar</button>
                 </div>

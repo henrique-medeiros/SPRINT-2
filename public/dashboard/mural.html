@@ -46,7 +46,13 @@
             </div>
 
             <div class="btn-nav">
+                <h3>Atividades</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="https://app.pipefy.com/public/form/UzQ-70bw">
                 <h3>Suporte</h3>
+                </a>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
@@ -61,17 +67,18 @@
                 <div class="container">
                     <h1>Publicar uma ajuda</h1>
                     <div class="div-form" >
+                        <form id="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
-                                Nome:
-                                <input type="text" name="name" id="titulo" maxlength="100" type="text">
+                                Titulo:
+                                <input name="titulo" id="titulo" maxlength="100" type="text">
                             </label>
                             <br>
                             <label>
                                 Descrição (máximo de 250 caracteres):
-                                <textarea name="message" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
                             </label>
                             <br>
-                            <button>Enviar</button>
+                            <button onclick="enviar()">Enviar</button>
                         </form>
                     </div>
                     <h1>Ajudas</h1>
