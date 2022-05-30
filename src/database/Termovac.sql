@@ -33,16 +33,31 @@ CREATE TABLE aviso (
 
 CREATE TABLE medida (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	temperatura DECIMAL,
+dht11_umidade DOUBLE, 
+dht11_temperatura DOUBLE, 
+luminosidade DOUBLE, 
+lm35_temperatura DOUBLE, 
+chave INT,
 	momento DATETIME,
 	fk_transporte INT
 );
+select now();
+insert into medida values(null, 1, 1, 200, 25, 1, now(),1);
+insert into medida values(null, 1, 2, 11, 3, 1, now(),1);
+insert into medida values(null, 1, 1, 200, 50, 1, now(),1);
+
+select lm35_temperatura, 
+		momento,
+		DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico
+                    from medida
+                    where fk_transporte = 1
+                    order by id desc limit 7;
 
 select * from usuario;
 select * from aviso;
 select * from medida;
 
--- DROP TABLE AVISO;
+ DROP TABLE medida;
 
 insert into medida values (null, 20, '2022-05-20 14:18:00', 1),
 (null, 2, '2022-05-20 13:18:00', 1),
