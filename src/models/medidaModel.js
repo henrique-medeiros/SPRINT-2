@@ -14,7 +14,6 @@ function buscarUltimasMedidas(idTransporte, limite_linhas) {
 
 function buscarMedidasEmTempoReal(idTransporte) {
     instrucaoSql = `select 
-    
                         lm35_temperatura, 
                         DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, 
                         fk_transporte 
