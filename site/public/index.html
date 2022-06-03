@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Termovac | Página inicial</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <link rel="icon" href="./assets/LOGO2.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"> -->
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo"><span style="color: #00ffc8">t</span><span style="color: #44e6ff">Vac</span></h1>
+            <ul class="navbar">
+                <li class="agora">
+                    Início
+                </li>
+                <li>
+                    <a href="sobrenos.html">Sobre nós</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">Cadastro</a>
+                </li>
+                <li class="botao_simulador">
+                    <a href="simulador.html">Simulador</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="espacamento">
+
+    </div>
+
+    <div class="banner">
+        <div class="cont">
+            <div id="img"><img src="./assets/1.jpg" alt=""></div>
+            <div id="img"><img src="./assets/2.jpg" alt=""></div>
+            <div id="img"><img src="./assets/3.jpg" alt=""></div>
+            <div id="img"><img src="./assets/4.jpg" alt=""></div>
+        </div>
+    </div>
+
+    <div id="titulo_social">
+        <b id="title_social">NOSSOS PILARES</b>
+    </div>
+
+    <div class="social">
+        <div class="container">
+            <div class="boxes">
+                <div class="box">
+                    <img src="./assets/missao5.png" alt="icone da missão">
+                    <h4>Missão</h4>
+                    <div class="pilar_texto">
+                        <p>Desenvolver e comercializar serviços de monitoramento que priorize meios tecnológicos para
+                            diminuir o desperdício de termolábeis.</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="./assets/visao4.png" alt="icone da visão">
+                    <h4>Visão</h4>
+                    <div class="pilar_texto">
+                        <p>Se tornar a empresa de monitoramento mais reconhecida na área da saúde.</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="./assets/valores10.png" alt="icone dos valores">
+                    <h4>Valores</h4>
+                    <div class="pilar_texto">
+                        <p>Acima de tudo transparência e integridade com nossos clientes e colaboradores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="social_exp">
+        <div class="container">
+            <div class="social_cont">
+                <div class="conteudo">
+                    <img src="./assets/CONTATO.png">
+                </div>
+
+                <div class="conteudo2">
+                    <form action="https://api.staticforms.xyz/submit" method="post">
+                        <input type="hidden" name="accessKey" value="0ddbe837-00db-4ca1-a2b8-ff2a9a7a958e">
+                        <input type="hidden" name="redirectTo" value="http://localhost:3333/index.html">
+                    <b style="text-align: center">Entre em contato.</b><br>
+                    <input type="text" name="name" id="in_nome" placeholder="Nome Completo*"><br>
+                    <input type="text" name="email" id="in_email" placeholder="E-mail*"><br>
+                    <input name="message" id="in_mensagem" style="height: 150px" placeholder="Mensagem*">
+                    <div class="texto1">*Itens obrigatórios</div> <br>
+                    <button class="btnContato" onclick="enviar()">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!--footer inicio-->
+    <div class="footer">
+        <div class="container">
+            <h1 class="titulo"><span style="color: #00ffc8">t</span><span style="color: #44e6ff">Vac®<br>
+                    <span class="texto_footer" style="color:black">"O calor é para todos, o frio para poucos. Mas o controle é nosso!"</span>
+                </span></h1>
+        </div>
+    </div>
+    <!--footer fim-->
+</body>
+
+</html>
+
+<script>
+    document.querySelector(".cont")
+        .addEventListener("wheel", function () {
+            if (event.deltaY > 0) {
+                event.target.scrollBy(-1280, 0)
+
+            } else {
+                event.target.scrollBy(1280, 0)
+            }
+        })
+
+
+
+    function enviar() {
+        if(in_email.value != "" || in_nome.value != "" || in_mensagem.value != "") {
+            alert("E-mail enviado. Agradecemos o vosso contato")
+        } else {
+            alert("Preencha os campos corretamente.")
+        }
+    }
+</script>
