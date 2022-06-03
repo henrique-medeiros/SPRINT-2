@@ -121,7 +121,7 @@
             texto_conta.style.display = 'block'
             texto_perda.innerHTML = `Desperdício diário sem nossos serviços em R$: ${desperdicio.toFixed(2)}`
             texto_economia.innerHTML = `Desperdício diário com nossos serviços em R$: ${economia.toFixed(2)}`
-            porcentagem_texto.innerHTML = `<b style="color:red">Você perde ${((desperdicio)/(vacina*quantidade*viagem)*100).toFixed(2)}% do valor total dos produtos. <span style="color:green">Conosco perderia ${((economia)/(vacina*quantidade*viagem)*100).toFixed(2)}%.</span></b>`
+            porcentagem_texto.innerHTML = `<b style="color:red">Você perde ${((desperdicio)/(vacina*quantidade*viagem)*100).toFixed(2)}% do valor total dos produtos. <span style="color:green">Conosco, deixaria de perder ${(((desperdicio)/(vacina*quantidade*viagem)*100).toFixed(2))-(((economia)/(vacina*quantidade*viagem)*100).toFixed(2))}%.</span></b>`
             window.scrollTo({ top: 700, behavior: 'smooth' });
             } else {
                 alert("Insira os valores correspondentes.")
@@ -146,4 +146,5 @@
 
 </body>
 
+>>>>>>> 451e1ad071970daf3560c4709c50950c5681d53f:public/simulador.html
 </html>
